@@ -46,3 +46,43 @@ def check_answer(choice):
         button.config(state="disabled")
     next_btn.config(state="normal")
 
+# Function to Restart the Quiz
+def restart_quiz():
+    global current_question, score
+    # Reset current_question and score
+    current_question = 0
+    score = 0
+    # Update the score label
+    score_label.config(text="Score: {}/{}".format(score, len(quiz_data)))
+
+    # Enable all choice buttons
+    for button in choice_btns:
+        button.config(state="normal")
+
+    # Display the first question
+    show_question()
+
+# Function to move on to the next question or end the quiz if the questions have finished
+def next_question():
+    global current_question
+    # Move to the next question
+    current_question += 1
+
+    # Check if there are more questions
+    if current_question < len(quiz_data):
+        # Display the next question
+        show_question()
+    else:
+        # Display a message box with the final score and exit the application
+        messagebox.showinfo("QUIZ COMPLETED",
+                            "QUIZ COMPLETED! Final Score: {}/{}".format(score, len(quiz_data)))
+        root.destroy()
+
+# Creating the Tkinter window
+root = tk.Tk()
+root.title("Quiz App")
+root.geometry("600x650")
+# Apply a flatly theme using ttkbootstrap
+style = Style(theme="flatly")
+style.configure("TLabel", font=("Helvetica", 20))
+style.configure("TButton", font=("Helvetica", 16))
