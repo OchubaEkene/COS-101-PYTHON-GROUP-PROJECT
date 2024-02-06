@@ -86,3 +86,37 @@ root.geometry("600x650")
 style = Style(theme="flatly")
 style.configure("TLabel", font=("Helvetica", 20))
 style.configure("TButton", font=("Helvetica", 16))
+# Create and configure labels, buttons, and other UI elements
+qs_label = ttk.Label(
+    root,
+    anchor="center",
+    wraplength=500,
+    padding=10
+)
+qs_label.pack(pady=10)
+
+choice_btns = []
+for i in range(4):
+    button = ttk.Button(
+        root,
+        command=lambda i=i: check_answer(i)
+    )
+    button.pack(pady=10)
+    choice_btns.append(button)
+
+feedback_label = ttk.Label(
+    root,
+    anchor="center",
+    padding=10
+)
+feedback_label.pack(pady=10)
+
+score = 0
+score_label = ttk.Label(
+    root,
+    text="Score:0/{}".format(len(quiz_data)),
+    anchor="center",
+    padding=10
+)
+
+score_label.pack(pady=0)
