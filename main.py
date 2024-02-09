@@ -120,3 +120,28 @@ score_label = ttk.Label(
 )
 
 score_label.pack(pady=0)
+# Next Button
+next_btn = ttk.Button(
+    root,
+    text="Next",
+    command=next_question,
+    state="disabled"
+)
+next_btn.pack(pady=10)
+
+# Restart Button
+restart_btn = ttk.Button(
+    root,
+    text="Restart Quiz",
+    command=restart_quiz
+)
+
+restart_btn.pack(pady=20)
+
+current_question = 0
+
+# Display the first question
+show_question()
+
+# Run the Tkinter event loop
+root.mainloop()
