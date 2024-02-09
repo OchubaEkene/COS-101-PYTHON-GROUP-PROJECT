@@ -9,3 +9,4 @@ GROUP PROJECT-QUIZ APP USING PYTHON
 
 **FLOWCHART**
 ![Screenshot (103)](https://github.com/OchubaEkene/COS-101-PYTHON-GROUP-PROJECT/assets/147551927/946b4a9b-677a-4685-89f9-d40fc4f3c609)
+![Screenshot (103)](https://github.com/OchubaEkene/COS-101-PYTHON-GROUP-PROJECT/assets/147551927/1380a5c4-b1a1-4f45-9059-dd97858811b5)
